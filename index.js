@@ -5,11 +5,11 @@ require('dotenv/config');
 
 const api = process.env.API_URL;
 
-app.get(`{api}/products`, (req, res) =>{
+app.get(`{api}/theshoeclinic`, (req, res) =>{
     const product = {
         id: 1,
         name: "shoe cleaner",
-        image: 'https://i.postimg.cc/X7zn3yZb/Ev-Z67fz-XMAAz-TLB.jpg'
+        image: 'http://image.jpg'
     }
     res.send(product);
 })
@@ -17,4 +17,5 @@ app.get(`{api}/products`, (req, res) =>{
 app.listen(3002, ()=>{
     console.log('server is running at http://localhost:3002');
 })
+
 
