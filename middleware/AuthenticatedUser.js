@@ -3,18 +3,18 @@ const {sign, verify} = require('jsonwebtoken');
 
 function createToken(user) {
     return sign({
-        email: user.emailAdd,
-        userPass: user.userPass``
+        email: user.email,
+        password: user.password``
     },
     process.env.SECRET_KEY,
     {
         expiresIn: '1h'
     });
 }
-//
+
 function verifyAToken(req, res, next) {
     try{
-        const token = req.cookies["LegitUser"] !== null ? req.cookies["LegitUser"] :
+        const token = req.cookies["registeredUser"] !== null ? req.cookies["registeredUser"] :
         "Please register" ;
         const isValid = null;
         if(token !== "Please register") {
@@ -33,3 +33,4 @@ function verifyAToken(req, res, next) {
     }
 }
 module.exports= {createToken, verifyAToken};
+

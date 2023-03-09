@@ -6,12 +6,12 @@ const {createToken} = require('../middleware/AuthenticatedUser');
 
 class User {
     login(req, res) {
-        const {emailAdd, userPass} = req.body;
+        const {email, password} = req.body;
         const strQry = 
         `
-        SELECT name, surname, gender, emailAdd, cellnumber, password,
+        SELECT name, surname, gender, cellnumber, email, password, imgURL, shipping_address, regDate,
         FROM Users
-        WHERE emailAdd = '${emailAdd}';
+        WHERE emailAdd = '${email}';
         `;
         db.query(strQry, async (err, data)=>{
             if(err) throw err;
@@ -19,15 +19,15 @@ class User {
                 res.status(401).json({err: 
                     "You have provided an incorrect email address"});
             }else {
-                await compare(userPass, 
-                    data[0].userPass, 
+                await compare(password, 
+                    data[0].password, 
                     (cErr, cResult)=> {
                         if(cErr) throw cErr;
 
                         const jwToken = 
                         createToken(
                             {
-                                emailAdd, userPass  
+                                email, password  
                             }
                         );
 
@@ -55,7 +55,7 @@ class User {
     fetchUsers(req, res) {
         const strQry = 
         `
-        SELECT userID, name, surname, gender, cellnumber, emailAdd, userImg joinDate, cart
+        SELECT name, surname, gender, cellnumber, email, password, imgURL, shipping_address, regDate,
         FROM Users;
         `;
         db.query(strQry, (err, data)=>{
@@ -68,7 +68,7 @@ class User {
     fetchUser(req, res) {
         const strQry = 
         `
-        SELECT userID, name, surname, gender, cellnumber, emailAdd, userImg joinDate, cart
+        SELECT name, surname, gender, cellnumber, email, password, imgURL, shipping_address, regDate,
         FROM Users
         WHERE userID = ?;
         `;
@@ -84,11 +84,11 @@ class User {
     async createUser(req, res) {
 
         let detail = req.body;
-        detail.userPass = await 
-        hash(detail.userPass, 15);
+        detail.password = await 
+        hash(detail.password, 15);
 
         let user = {
-            emailAdd: detail.emailAdd,
+            email: detail.email,
             password: detail.password
         }
         const strQry =
@@ -99,7 +99,7 @@ class User {
                 res.status(401).json({err});
             }else {
                 const jwToken = createToken(user);
-                res.cookie("LegitUser", jwToken, {
+                res.cookie("RegisteredUser", jwToken, {
                     maxAge: 3600000,
                     httpOnly: true
                 });
@@ -107,12 +107,12 @@ class User {
             }
         })    
     }
-
+ 
     updateUser(req, res) {
         let data = req.body;
-        if(data.userPass !== null || 
-            data.userPass !== undefined)
-            data.userPass = hashSync(data.userPass, 15);
+        if(data.password !== null || 
+            data.password !== undefined)
+            data.password = hashSync(data.password, 15);
         const strQry = 
         `
         UPDATE Users
@@ -142,10 +142,76 @@ class User {
     }
 }
 
+class Service {
+    fetchServices(req, res) {
+        const strQry = `SELECT serviceId, name, description, 
+        price, imgURL
+        FROM services ;`;
+        db.query(strQry, (err, results)=> {
+            if(err) throw err;
+            res.status(200).json({results: results})
+        });
+    }
+    fetchService(req, res) {
+        const strQry = `SELECT serviceId, name, description, 
+        price, imgURL
+        FROM services
+        WHERE id = ?;`;
+        db.query(strQry, [req.params.id], (err, results)=> {
+            if(err) throw err;
+            res.status(200).json({results: results})
+        });
+    }
+    addService(req, res) {
+        const strQry = 
+        `
+        INSERT INTO Service
+        SET ?;
+        `;
+        db.query(strQry,[req.body],
+            (err)=> {
+                if(err){
+                    res.status(400).json({err: "Unable to insert a new record"});
+                }else {
+                    res.status(200).json({msg: "Service saved"});
+                }
+            }
+        );
+    }
+    updateService(req, res) {
+        const strQry = 
+        `
+        UPDATE Service
+        SET ?
+        WHERE id = ?
+        `;
+        db.query(strQry,[req.body, req.params.id],
+            (err)=> {
+                if(err){
+                    res.status(400).json({err: "Unable to update a record"});
+                }else {
+                    res.status(200).json({msg: "Service updated"});
+                }
+            }
+        );    
+    }
+    deleteService(req, res) {
+        const strQry = 
+        `
+        DELETE FROM Services
+        WHERE id = ?;
+        `;
+        db.query(strQry,[req.params.id], (err)=> {
+            if(err) res.status(400).json({err: "The record was not found"});
+            res.status(200).json({msg: "The service was deleted"});
+        })
+    }
+
+}
+
 class Product {
     fetchProducts(req, res) {
-        const strQry = `SELECT id, prodName, prodDescription, 
-        levels, prodPrice, prodQuantity, imgURL
+        const strQry = `SELECT prodId, name, description, prodQuantity, price, imgURL
         FROM products;`;
         db.query(strQry, (err, results)=> {
             if(err) throw err;
@@ -153,7 +219,7 @@ class Product {
         });
     }
     fetchProduct(req, res) {
-        const strQry = `SELECT id, product, description, 
+        const strQry = `SELECT prodId, name, description, prodQuantity, price, imgURL
         levels, price, quantity, imgURL
         FROM products
         WHERE id = ?;`;
@@ -161,7 +227,6 @@ class Product {
             if(err) throw err;
             res.status(200).json({results: results})
         });
-
     }
     addProduct(req, res) {
         const strQry = 
@@ -211,6 +276,7 @@ class Product {
 }
 
 module.exports = {
-    User, 
+    User,
+    Service,
     Product
 }

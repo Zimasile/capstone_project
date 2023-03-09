@@ -1,21 +1,35 @@
-const express = require ('express');
+const express = require('express');
+
+const route = require('./controller');
+
+const cors = require('cors');
+
+const port = parseInt(process.env.PORT) || 4000;
+
 const app = express();
 
-require('dotenv/config');
+const {errorHandling} = require('./middleware/ErrorHandling');
 
-const api = process.env.API_URL;
+const cookieParser = require('cookie-parser');
 
-app.get(`{api}/theshoeclinic`, (req, res) =>{
-    const product = {
-        id: 1,
-        name: "shoe cleaner",
-        image: 'http://image.jpg'
-    }
-    res.send(product);
-})
+app.use((req, res, next)=> {
+        res.header('Access-Control-Allow-Origin', 'http://localhost:8080')
+        res.header("Access-Control-Allow-Credentials", "true")
+        res.header("Access-Control-Allow-Methods", "*")
+        res.header("Access-Control-Allow-Headers", "*")
+        next();
+});
+app.use(route);
+app.use(
+    cors(),
+    cookieParser(),
+    express.json,
+    express.urlencoded({extended: false})
+)
 
-app.listen(3002, ()=>{
-    console.log('server is running at http://localhost:3002');
-})
+app.listen(port, ()=> {
+    console.log(`Server is running`)
+});
 
+app.use(errorHandling);
 
