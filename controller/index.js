@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const route = express.Router();
 
-const {User, Product} = require('../model');
+const {User, Product, Service} = require('../model');
 
 const user = new User();
 
@@ -38,18 +38,44 @@ route.delete('/user/:id', (req, res)=>{
     user.deleteUser(req, res);
 });
 
+// =====Services======
+
+route.get('/services', (req, res)=> {
+    Service.fetchServices(req, res);
+})
+
+route.get('/services/:id', 
+(req, res)=> {
+    Service.fetchServices(req, res);
+})
+
+route.post('/service', 
+bodyParser.json(), 
+(req, res)=> {
+    Service.addService(req, res);
+})
+
+route.put('/service/:id', 
+bodyParser.json(),
+(req, res)=> {
+    Service.updateService(req, res);
+})
+
+route.delete('/service/:id', 
+(req, res)=> {
+    Service.deleteService(req, res);
+})
+
 // =====Products======
 
 route.get('/products', (req, res)=> {
     product.fetchProducts(req, res);
 })
 
-
 route.get('/product/:id', 
 (req, res)=> {
     product.fetchProduct(req, res);
 })
-
 
 route.post('/product', 
 bodyParser.json(), 
@@ -69,3 +95,4 @@ route.delete('/product/:id',
 })
 
 module.exports = route;
+
