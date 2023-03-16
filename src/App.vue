@@ -23,11 +23,13 @@ export default {
   font-family: cursive;
   text-align: center;
 }
-
-nav {
-  padding: 19px 20px;
-  display: inline-block;
+.navbar {
+  margin: 0;
+  padding: 0;
 }
+/*nav {
+  display: inline-block;
+}*/
 /*
 nav a {
   font-weight: bold;

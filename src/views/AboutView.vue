@@ -1,16 +1,14 @@
 <template>
-    <div class="services">
-      <h1>This is an about page</h1>
-    </div>
+  <AboutPage/>
   </template>
   
 <script >
-import HomePage from '@/components/HomePage.vue'
+import AboutPage from '@/components/AboutPage.vue'
 
 export default {
-  name: 'HomeView',
+  name: 'AboutView',
   components: {
-    HomePage
+    AboutPage
   }
 }
 </script>

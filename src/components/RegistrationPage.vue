@@ -1,19 +1,35 @@
 <template>
-  <div class="intro">
-    <div class="plan-container">
-      <div class="plan">
-        <div class="plan-border"></div>
-        <h1>Just because you've got better things to do</h1>
-        <p>Dubbed the best in the business, we pamper your shoes back to life.</p>
-        <p>1 Corinthians 15:21: "For since death came through a man, the resurrection of the dead comes also through a man."</p>
-        <p>1 Restorians 15:21 "for since the death of ye shoe came through man, the resurrection of them comes through our hands"</p>
-        <button>VIEW MORE</button>
-      </div>
-      <div class="image-container">
-        <img src="https://i.postimg.cc/jqMwNyyj/c1596c38ca0241bea76627fe079b051a.jpg" alt="">
-      </div>
+    <div class="plan-border"></div>
+    <div class="container">
+        <div class="card">
+            <a class="login">Register</a>
+            <div class="inputBox">
+                <input type="name" v-model="Name" placeholder="John" required="required">
+                <span>Name</span>
+            </div>
+            <div class="inputBox">
+                <input type="surname" v-model="Surname" placeholder="Doe" required="required">
+                <span>Surname</span>
+            </div>
+            <div class="inputBox">
+                <input type="text" v-model="cellnumber" placeholder="0812345678" required="required">
+                <span>Cellphone Number</span>
+            </div>
+            <div class="inputBox">
+                <input type="username" v-model="username" placeholder="John356" required="required">
+                <span>username</span>
+            </div>
+            <div class="inputBox">
+                <input type="email" v-model="email" placeholder="user314@gmail.com" required="required">
+                <span>E-mail</span>
+            </div>
+            <div class="inputBox">
+                <input type="password" v-model="password" placeholder="*********" required="required">
+                <span class="user">Password</span>
+            </div>
+            <button class="enter">Register</button>
+        </div>
     </div>
-  </div>
 
   <section class="footer">
     <div class="footer-heading">
@@ -93,149 +109,183 @@
       </svg></a></button>
   </section>
 </template>
-
 <script>
 export default {
-  name: 'HomePage',
+  name: 'RegistrationPage',
   props: {
     msg: String
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-
-.intro {
-  background-color: hsl(0, 0%, 100%);
-  background-repeat: no-repeat;
-  background-position: bottom -0px left, top -120px right;
-  background-size: 10%, 27%;
-  height: 620px;
-  display: flex;
-  margin-right: 0;
-  width: 1529px;
-  justify-content: center;
-  color: hsl(124, 52%, 12%);
+<style>
+.login {
+    color:hsl(124, 52%, 12%);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    font-weight: bold;
+    font-size: x-large;
 }
-
-.plan-container {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  height: 150px;
-}
-
 .plan-border {
-  border-top: 1px solid hsl(124, 52%, 12%);
-  width: 570px;
-  height: 10px;
-  margin-bottom: 99px;
+    border-top: 1px solid hsl(124, 52%, 12%);
+    width: 1509px;
+    height: 10px;
+    margin-bottom: 99px;
+  }
+  
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+    width: 380px;
+    flex-direction: column;
+    gap: 35px;
+    background: #e3e3e3;
+    box-shadow: 16px 16px 32px #c8c8c8,
+          -16px -16px 32px #fefefe;
+    border-radius: 8px;
+    border: 1px solid hsl(124, 52%, 12%);
+    margin: auto;
+}
+  
+.inputBox {
+    position: relative;
+    width: 250px;
+}
+  
+.inputBox input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: hsl(0, 0%, 0%);
+    font-size: 1em;
+    background: transparent;
+    border-left: 2px solid hsl(124, 52%, 12%);
+    border-bottom: 2px solid hsl(124, 52%, 12%);
+    transition: 0.1s;
+    border-bottom-left-radius: 8px;
+}
+  
+.inputBox span {
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    transform: translateY(-4px);
+    margin-left: 10px;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 12px;
+    color: hsl(124, 52%, 12%);
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 3px;
+    border-radius: 8px;
+}
+  
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+    transform: translateX(113px) translateY(-15px);
+    font-size: 0.8em;
+    padding: 5px 10px;
+    background: hsl(124, 52%, 12%);
+    letter-spacing: 0.2em;
+    color: #fff;
+    border: 2px;
 }
 
-.plan {
-  width: 570px;
-  margin: 50px 30px 0 0;
+.inputBox input:valid,
+.inputBox input:focus {
+    border: 2px solid hsl(124, 52%, 12%);
+    border-radius: 8px;
 }
 
-.plan h1 {
-  margin: 8px 0;
-  font-size: 3.5rem;
+.enter {
+    height: 45px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid hsl(124, 52%, 12%);
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.5s;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: hsl(124, 52%, 12%);
+    letter-spacing: 2px;
+    margin-bottom: 1em;
 }
-
-.plan p {
-  font-size: 1em;
-}
-
-.plan button:hover {
-  background-color: hsl(0, 0%, 98%);
-  color: hsl(124, 52%, 12%);
-}
-
-.intro img {
-  width: 410px;
-  height: 430px;
-  margin: 100px 60px 0 0;
-}
-
-
-.intro button:hover{
-  background-color: hsl(39, 100%, 51%);
-  color: hsl(124, 52%, 12%);
-  border: 1px solid hsl(124, 52%, 12%);
-}
-
-.intro img {
-  width: 410px;
-  height: 430px;
-  margin: 100px 60px 0 0;
+  
+.enter:hover {
+    background-color: #c8c8c8;
+    color:hsl(124, 52%, 12%);
 }
 
 .footer {
-  background-color: #ffffff;
-  background-repeat: no-repeat;
-  background-position: top 20%;
-  background-size: 40%;
-  text-decoration: none;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: top 20%;
+    background-size: 40%;
+    text-decoration: none;
 }
 
 .footer img {
-  width: 20px;
-  height: 20px;
-  margin: 0 0 0 10px;
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 10px;
 }
-
+.footer ul li {
+    list-style-type:square;
+}
 .footer-heading {
-  display: flex;
-  justify-content: space-between;
-  width: 92vw;
-  margin: 180px 0 0 0;
-  padding: 35px;
-  border-bottom: 1px solid hsl(273, 4%, 51%);
+    display: flex;
+    justify-content: space-between;
+    width: 99vw;
+    margin: 180px 0 0 0;
+    padding: 35px;
+    border-bottom: 1px solid hsl(273, 4%, 51%);
 }
 
 .social-media {
-  width: 300px;
+    width: 300px;
 }
 
 
 .footer-links {
-  width: 80vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 70px 0 0 120px;
-  font-size: 0.85rem;
-  text-decoration: none;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 70px 0 0 120px;
+    font-size: 0.85rem;
+    text-decoration: none;
 }
 
 .footer-links div {
-  width: 150px;
-  margin: 0 0 40px 0;
-  text-decoration: none;
+    width: 150px;
+    margin: 0 0 40px 0;
+    text-decoration: none;
 }
 
 .footer-links ul {
-  margin-top: 50px;
-  padding: 0;
+    margin-top: 50px;
+    padding: 0;
 }
 
 .footer-links p {
-  color: hsl(273, 4%, 51%);
+    color: hsl(273, 4%, 51%);
 }
 
 .footer-links a {
-  color: hsl(270, 9%, 17%);
+    color: hsl(270, 9%, 17%);
 }
 
 .footer-links a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 button{
-  border: 1px solid hsl(124, 52%, 12%);
+    border: 1px solid hsl(124, 52%, 12%);
 }
-
-
 
 </style>
