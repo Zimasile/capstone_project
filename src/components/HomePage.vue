@@ -14,7 +14,8 @@
       </div>
     </div>
   </div>
-  <br>
+  <!-- <br> -->
+  <div class="plan-borderi"></div>
   <div class="video" >
     <video autoplay loop muted playsinline class="video">
       <source src="../assets/sneaker.mp4" type="video/mp4"/>
@@ -92,7 +93,8 @@
         </div>
       </div>
     </div>
-    <button><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+    <div><p>Copyrights © 2023 @The Shoe Clinic</p></div>
+    <button class="btn-f"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
         <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
       </svg></a></button>
@@ -111,8 +113,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .intro {
-  background-image: linear-gradient( rgba(0,0,0,0.5), rgba(0,0,0,0.9)),
-   url('https://i.postimg.cc/Z53f5DqC/FB-IMG-16674003915460163.jpg');
+/*  background-image: linear-gradient( rgba(0,0,0,0.5), rgba(0,0,0,0.9)),
+   url('https://i.postimg.cc/Z53f5DqC/FB-IMG-16674003915460163.jpg');*/
+  background-color: hsl(0, 0%, 98%);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -122,7 +125,7 @@ export default {
   margin-right: 0;
   width: 1529px;
   justify-content: center;
-  color:hsl(0, 0%, 98%);
+  color:hsl(124, 52%, 12%);
 }
 
 .plan-container {
@@ -135,6 +138,12 @@ export default {
 .plan-border {
   border-top: 1px solid hsl(124, 52%, 12%);
   width: 570px;
+  height: 10px;
+  margin-bottom: 99px;
+}
+.plan-borderi {
+  border-top: 1px solid hsl(124, 52%, 12%);
+  width: 1528px;
   height: 10px;
   margin-bottom: 99px;
 }
@@ -163,11 +172,13 @@ export default {
   height: 430px;
   margin: 100px 60px 0 0;
 }
+
 .intro button:hover{
   background-color: hsl(39, 100%, 51%);
   color: hsl(124, 52%, 12%);
   border: 1px solid hsl(124, 52%, 12%);
 }
+
 .intro img {
   width: 410px;
   height: 430px;
@@ -178,6 +189,12 @@ export default {
   display: block;
   margin: 10px auto;
   padding: 30px 10px;
+  width: 80%;
+  height: 600px;
+}
+
+video {
+  object-fit: fill;
 }
 
 .footer {

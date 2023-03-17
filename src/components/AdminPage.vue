@@ -1,15 +1,10 @@
 <template>
-  <div class="plan-border"></div>
-  <div class="about">
-    <h2>About The Shoe Clinic</h2>
-    <p>The Shoe Clinic was founded by Athenkosi Matyu in December 2021/January 2022. The name was inspired by his passion for "doctoring" shoes, whether they are dirty, old, or in need of customization to the client's preferences.</p>
-    <p>When Athenkosi first shared his idea with his friends, they were supportive and brought in their own pairs of sneakers for him to work on. This support encouraged him to start his business, and he has since been providing his services mainly in New Brighton.</p>
-    <p>As business has grown, Athenkosi has reached out to young people in his area to help him out. He hopes to continue working with them, providing them with job opportunities and helping to keep them off the streets.</p>
-    <p>The Shoe Clinic is currently operating from Athenkosi's home, but he has a vision to establish a dedicated workspace. He plans to open another branch in Cape Town by the end of the year, and from there expand to other locations.</p>
-    <h3>Athenkosi Matyu - Founder</h3>
-  </div>
-  
+    <div class="plan-border"></div>
+    <div>
+      <h4>Admin Page</h4>
+    </div>
 
+  
     <section class="footer">
       <div class="footer-heading">
         <h4>EVERYONE BUYS THEM BUT WE ARE THE BEST AT CLEANING THEM ....</h4>
@@ -58,7 +53,7 @@
             </ul>
           </div>
           </div>
-          
+  
         <div>
           <div class="text">
             <p>OTHERS</p>
@@ -88,104 +83,86 @@
           <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
         </svg></a></button>
     </section>
-</template>
-
-<script>
-export default {
-  name: 'AboutPage',
-  props: {
-    msg: String
+  </template>
+  
+  <script>
+  export default {
+    name: 'ServicesPage',
+    props: {
+      msg: String
+    } 
   }
-}
-</script>
-
-<style>
-.plan-border {
-  border-top: 1px solid hsl(124, 52%, 12%);
-  width: 1509px;
-  height: 10px;
-  margin-bottom: 99px;
-}
-.about {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 30px;
-  text-align: justify;
-}
-.about h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.about p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.footer {
-  background-color: #ffffff;
-  background-repeat: no-repeat;
-  background-position: top 20%;
-  background-size: 40%;
-  text-decoration: none;
-}
-
-.footer img {
-  width: 20px;
-  height: 20px;
-  margin: 0 0 0 10px;
-}
-
-.footer-heading {
-  display: flex;
-  justify-content: space-between;
+  </script>
+  
+  <style>
+  .plan-border {
+    border-top: 1px solid hsl(124, 52%, 12%);
+    width: 1509px;
+    height: 10px;
+    margin-bottom: 99px;
+  }
+  .footer {
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: top 20%;
+    background-size: 40%;
+    text-decoration: none;
+  }
+  
+  .footer img {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 10px;
+  }
+  
+  .footer-heading {
+    display: flex;
+    justify-content: space-between;
   width: 92vw;
-  margin: 190px 0 0 0;
-  padding: 35px;
-  border-bottom: 1px solid hsl(273, 4%, 51%);
-}
-
-.social-media {
-  width: 300px;
-}
-
-
-.footer-links {
-  width: 80vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 70px 0 0 120px;
-  font-size: 0.85rem;
-  text-decoration: none;
-}
-
-.footer-links div {
-  width: 150px;
-  margin: 0 0 40px 0;
-  text-decoration: none;
-}
-
-.footer-links ul {
-  margin-top: 50px;
-  padding: 0;
-}
-
-.footer-links p {
-  color: hsl(273, 4%, 51%);
-}
-
-.footer-links a {
-  color: hsl(270, 9%, 17%);
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-button{
-  color: hsl(124, 52%, 12%);
-  border: 1px solid hsl(124, 52%, 12%);
-}
-
-</style>
+  margin: 180px 0 0 0px;
+    padding: 35px;
+    border-bottom: 1px solid hsl(273, 4%, 51%);
+  }
+  
+  .social-media {
+    width: 300px;
+  }
+  
+  
+  .footer-links {
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 70px 0 0 120px;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  
+  .footer-links div {
+    width: 150px;
+    margin: 0 0 40px 0;
+    text-decoration: none;
+  }
+  
+  .footer-links ul {
+    margin-top: 50px;
+    padding: 0;
+  }
+  
+  .footer-links p {
+    color: hsl(273, 4%, 51%);
+  }
+  
+  .footer-links a {
+    color: hsl(270, 9%, 17%);
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  button{
+    border: 1px solid hsl(124, 52%, 12%);
+  }
+  
+  </style>
