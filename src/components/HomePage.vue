@@ -14,7 +14,12 @@
       </div>
     </div>
   </div>
-
+  <br>
+  <div class="video" >
+    <video autoplay loop muted playsinline class="video">
+      <source src="../assets/sneaker.mp4" type="video/mp4"/>
+    </video>
+  </div>
   <section class="footer">
     <div class="footer-heading">
       <h4>EVERYONE BUYS THEM BUT WE ARE THE BEST AT CLEANING THEM ....</h4>
@@ -105,19 +110,19 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-
 .intro {
-  background-color: hsl(0, 0%, 100%);
+  background-image: linear-gradient( rgba(0,0,0,0.5), rgba(0,0,0,0.9)),
+   url('https://i.postimg.cc/Z53f5DqC/FB-IMG-16674003915460163.jpg');
   background-repeat: no-repeat;
-  background-position: bottom -0px left, top -120px right;
-  background-size: 10%, 27%;
+  background-position: center center;
+  background-size: cover;
+  object-fit: cover;
   height: 620px;
   display: flex;
   margin-right: 0;
   width: 1529px;
   justify-content: center;
-  color: hsl(124, 52%, 12%);
+  color:hsl(0, 0%, 98%);
 }
 
 .plan-container {
@@ -158,18 +163,21 @@ export default {
   height: 430px;
   margin: 100px 60px 0 0;
 }
-
-
 .intro button:hover{
   background-color: hsl(39, 100%, 51%);
   color: hsl(124, 52%, 12%);
   border: 1px solid hsl(124, 52%, 12%);
 }
-
 .intro img {
   width: 410px;
   height: 430px;
   margin: 100px 60px 0 0;
+}
+
+.video {
+  display: block;
+  margin: 10px auto;
+  padding: 30px 10px;
 }
 
 .footer {
@@ -189,7 +197,7 @@ export default {
 .footer-heading {
   display: flex;
   justify-content: space-between;
-  width: 92vw;
+  width: 93vw;
   margin: 180px 0 0 0;
   padding: 35px;
   border-bottom: 1px solid hsl(273, 4%, 51%);
