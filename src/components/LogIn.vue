@@ -1,6 +1,7 @@
 <template>
         <div class="plan-border"></div>
         <div class="container">
+          <form action=""></form>
             <div class="card">
                 <a class="login">Log in</a>
                 <div class="inputBox">
@@ -13,6 +14,7 @@
                 </div>
                 <button class="enter">Log-in</button>
             </div>
+          </form>
         </div>
         <div v-if="user">Welcome {{ user.firstName + user.lastName }}</div>
 

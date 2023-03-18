@@ -17,13 +17,10 @@
           <p class="cta__lead">
           </p>
           <img
-            src="https://i.postimg.cc/pr27LJzn/FB-IMG-16714502895573620-Photo-Room-png-Photo-Room.png"
-            alt="a supervisor icon"
-            class="cta__img" width="350px"
-          />
-          <button>Request Service</button>
+            src="https://i.postimg.cc/pr27LJzn/FB-IMG-16714502895573620-Photo-Room-png-Photo-Room.png" alt="" class="cta__img" width="350px"/>
+          <button>Request</button>
         </div>
-        <!-- Team Builder -->
+
         <div class="cta cta__red">
           <h3 class="cta__title">Deep Clean</h3>
           <p class="cta__lead">
@@ -31,9 +28,7 @@
             project
           </p>
           <img
-            src=""
-            alt="A team-builder icon"
-            class="cta__img"
+            src="" alt="" class="cta__img"
           />
         </div>
         <!-- Karma -->
