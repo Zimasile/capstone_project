@@ -1,8 +1,69 @@
 <template>
   <div class="plan-border"></div>
-  <div>
-    <h4>The Shoe Clinic Services</h4>
-  </div>
+
+  <header class="header">
+    <h3 class="header__head fw-light">We Offer the following Services</h3>
+    <p class="header-lead fw-normal">
+      Our Artificial Intelligence powered tools use millions of project data
+      points to ensure that your project is successful
+    </p>
+  </header>
+  <!-- main section -->
+  <main class="main">
+    <section class="grid-container">
+      <div class="container">
+        <div class="cta cta__cyan">
+          <h3 class="cta__title">Customization</h3>
+          <p class="cta__lead">
+          </p>
+          <img
+            src="https://i.postimg.cc/pr27LJzn/FB-IMG-16714502895573620-Photo-Room-png-Photo-Room.png"
+            alt="a supervisor icon"
+            class="cta__img" width="350px"
+          />
+          <button>Request Service</button>
+        </div>
+        <!-- Team Builder -->
+        <div class="cta cta__red">
+          <h3 class="cta__title">Deep Clean</h3>
+          <p class="cta__lead">
+            Scans our talent network to create the optimal team for your
+            project
+          </p>
+          <img
+            src=""
+            alt="A team-builder icon"
+            class="cta__img"
+          />
+        </div>
+        <!-- Karma -->
+        <div class="cta cta__orange">
+          <h3 class="cta__title">Whitening</h3>
+          <p class="cta__lead">
+            Regularly evaluates our talent to ensure quality
+          </p>
+          <img
+            src="https://i.postimg.cc/C5dqVdmp/FB-IMG-16744789054423222-Photo-Room-png-Photo-Room.png"
+            alt="A Karma icon"
+            class="cta__img"  width="350px"
+          />
+        </div>
+
+        <div class="cta cta__dark">
+          <h3 class="cta__title">Suede Refurbishing</h3>
+          <p class="cta__lead">
+            Uses data from past projects to provide better delivery estimates
+          </p>
+
+          <img
+            src=""
+            alt="A Calculator icon"
+            class="cta__img"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
 
 
   <section class="footer">
@@ -95,11 +156,195 @@ export default {
 </script>
 
 <style>
+:root {
+  --orange-color: #f9fc4e;
+  --red-color: #b6ea54;
+  --darkblue-color: #549ef2;
+  --Cyanblue-color: #44d3d2;
+  --Dark-Blue-color: hsl(234, 12%, 34%);
+  --Grayish-Blue-color: hsl(229, 6%, 66%);
+  --Light-Gray-color: hsl(0, 0%, 98%);
+  --font-weight-light: 200;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+}
+
 .plan-border {
   border-top: 1px solid hsl(124, 52%, 12%);
   width: 1509px;
   height: 10px;
   margin-bottom: 99px;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+/* Typegraphy */
+p {
+  color: var(--Dark-Blue-color);
+  opacity: 0.5;
+}
+h1 {
+  color: var(--Dark-Blue-color);
+}
+
+.fw-light {
+  font-weight: var(--font-weight-light);
+}
+
+.fw-normal {
+  font-weight: var(--font-weight-normal);
+}
+.fw-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* General style */
+.header {
+  text-align: center;
+  margin: 5rem 2rem 7rem 2rem;
+}
+.header__head.fw-bold {
+  font-size: 2.4rem;
+}
+.header__head.fw-light {
+  font-size: 2.4rem;
+}
+.header-lead {
+  font-size: 1.5rem;
+  margin: 0 6rem;
+  line-height: 25px;
+}
+
+/* main style for grid container */
+.cta__cyan {
+  border-top: 5px solid var(--Cyanblue-color);
+}
+.cta__red {
+  border-top: 5px solid var(--red-color);
+}
+.cta__orange {
+  border-top: 5px solid var(--orange-color);
+}
+.cta__dark {
+  border-top: 5px solid var(--darkblue-color);
+}
+.container {
+  margin: 0 3rem;
+}
+.cta__img {
+  display: block;
+  margin: auto;
+}
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background: #ffffff;
+  box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+  padding: 3rem 3rem 2rem 3rem;
+  border-radius: 8px;
+}
+.cta__title {
+  font-weight: var(--font-weight-bold);
+  font-size: 2rem;
+  color: #4d4f62;
+}
+.cta__lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  line-height: 23px;
+}
+
+/* media queries */
+@media (min-width: 688px) {
+  /* 56.25% */
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+    margin: 0 5rem;
+  }
+  .cta__lead {
+    font-size: 1.6rem;
+  }
+  .cta__title {
+    font-size: 2.3;
+  }
+  .header-lead {
+    font-size: 1.8rem;
+    margin: 0 10rem;
+  }
+  .header__head.fw-bold {
+    font-size: 2.7rem;
+  }
+  .header__head.fw-light {
+    font-size: 2.7rem;
+  }
+}
+@media (min-width: 1255px) {
+  html {
+    font-size: 50%;
+  }
+  .header {
+    margin-top: 8rem;
+  }
+  .main {
+    padding-bottom: 3rem;
+  }
+  .header-lead {
+    font-size: 2rem;
+
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .header__head.fw-bold {
+    font-size: 4rem;
+  }
+  .header__head.fw-light {
+    font-size: 4rem;
+  }
+
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin: 0 15rem;
+  }
+  .cta__orange {
+    grid-column: 2 / 3;
+  }
+  .cta__dark {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 2;
+  }
+
+  .cta__cyan {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+  }
+
+  .cta__lead {
+    font-size: 1.7rem;
+  }
+  .cta__title {
+    font-size: 2.5rem;
+  }
+  .cta {
+    padding: 4rem;
+  }
 }
 .footer {
   background-color: #ffffff;

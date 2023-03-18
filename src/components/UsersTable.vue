@@ -1,5 +1,4 @@
 <template>
-
     <div class="plan-border"></div>
     <div>
       <h4>Users Table</h4>
@@ -116,7 +115,7 @@
   
   <script>
   export default {
-    name: 'ProductsTable',
+    name: 'UsersTable',
     props: {
       msg: String
     } 

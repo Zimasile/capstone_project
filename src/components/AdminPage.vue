@@ -1,8 +1,8 @@
 <template>
     <div class="plan-border"></div>
-    <div>
+    <!-- <div>
       <h4>Admin Page</h4>
-    </div>
+    </div> -->
 
   
     <section class="footer">

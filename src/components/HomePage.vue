@@ -174,8 +174,8 @@ export default {
 }
 
 .intro button:hover{
-  background-color: hsl(39, 100%, 51%);
-  color: hsl(124, 52%, 12%);
+  background-color: hsl(124, 52%, 12%);
+  color: hsl(0, 0%, 98%);
   border: 1px solid hsl(124, 52%, 12%);
 }
 
