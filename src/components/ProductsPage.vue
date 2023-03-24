@@ -1,7 +1,6 @@
 <template>
-
-
     <div class="plan-border"></div>
+    
     <div>
       <div class="grid">
         <div class="col-sx">
@@ -243,78 +242,4 @@
     font-weight: 400;
 }
   
-.grid {
-    display: flex;
-}
-  
-.grid .col-sx,
-.grid .col-dx {
-    width: 50%;
-}
-  
-.products {
-    padding: 0 1rem 0 0;
-}
-  
-.products h2 {
-    margin-top: 0;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    font-weight: 400;
-    border-bottom: 1px solid #555;
-}
-  
-.products .products-list {
-    margin: 0.5rem 0 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
-  
-.products .products-list .product {
-    margin: 0;
-    list-style: none;
-    width: 50%;
-}
-  
-.products .products-list .product:nth-child(odd) {
-    padding-right: 1rem;
-}
-  
-.products .products-list .product:nth-child(even) {
-    padding-left: 1rem;
-}
-  
-.products .products-list .product .box {
-    margin-bottom: 2.15rem;
-    padding: 1rem;
-    text-align: center;
-    box-shadow: 0 0 3px 2px rgba(black, 0.15);
-}
-  
-.products .products-list .product .box:nth-child(even) {
-    margin-left: 0.5rem;
-}
-  
-.products .products-list .product .box .image {
-    display: block;
-    width: 100%;
-    height: 100px;
-    background: #eee;
-    margin-bottom: 1rem;
-}
-
-.products-list .product .box .title {
-  margin-top: 0;
-}
-
-.products-list .product .box button {
-  padding: 0.35rem 0.7rem 0.28rem;
-  border: 0;
-  text-transform: uppercase;
-  font-size: 0.85em;
-  color: white;
-  background: rgba(black, 0.5);
-  box-shadow: 0 18px 10px -10px;
-} 
   </style>
