@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
-
+import axios from 'axios';
+const backendURL = "https://the-shoe-clinic.onrender.com/";
 export default createStore({
   state: {
     users: null,
@@ -66,7 +67,7 @@ export default createStore({
     },
     register: async(context, payload) => {
       const {firstName, lastName, gender, cellphoneNumber, emailAdd, userPass, userRole, userProfile, joinDate} = payload
-      const res = await fetch('https://full-stack-group.onrender.com/users',{
+      const res = await fetch('https://the-shoe-clinic.onrender.com/users',{
         method: "POST",
         body: JSON.stringify({
           firstName,
