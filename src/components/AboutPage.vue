@@ -1,15 +1,20 @@
 <template>
   <div class="plan-border"></div>
   <div class="about">
-    <h2>About The Shoe Clinic</h2>
-    <p>The Shoe Clinic was founded by Athenkosi Matyu in December 2021/January 2022. The name was inspired by his passion for "doctoring" shoes, whether they are dirty, old, or in need of customization to the client's preferences.</p>
-    <p>When Athenkosi first shared his idea with his friends, they were supportive and brought in their own pairs of sneakers for him to work on. This support encouraged him to start his business, and he has since been providing his services mainly in New Brighton.</p>
-    <p>As business has grown, Athenkosi has reached out to young people in his area to help him out. He hopes to continue working with them, providing them with job opportunities and helping to keep them off the streets.</p>
-    <p>The Shoe Clinic is currently operating from Athenkosi's home, but he has a vision to establish a dedicated workspace. He plans to open another branch in Cape Town by the end of the year, and from there expand to other locations.</p>
-    <h3>Athenkosi Matyu - Founder</h3>
+
+    <div class="img"><img src="https://i.postimg.cc/KYhHMVgY/IMG-20230324-125049-Photo-Room-png-Photo-Room.png" alt="Athi"></div>
+
+    <div class="text">
+      <h2>About The Shoe Clinic</h2>
+      <p>The Shoe Clinic was founded by Athenkosi Matyu in December 2021/January 2022. The name was inspired by his passion for "doctoring" shoes, whether they are dirty, old, or in need of customization to the client's preferences.</p>
+      <p>When Athenkosi first shared his idea with his friends, they were supportive and brought in their own pairs of sneakers for him to work on. This support encouraged him to start his business, and he has since been providing his services mainly in New Brighton.</p>
+      <p>As business has grown, Athenkosi has reached out to young people in his area to help him out. He hopes to continue working with them, providing them with job opportunities and helping to keep them off the streets.</p>
+      <p>The Shoe Clinic is currently operating from Athenkosi's home, but he has a vision to establish a dedicated workspace. He plans to open another branch in Cape Town by the end of the year, and from there expand to other locations.</p>
+      <h3>Athenkosi Matyu - Founder</h3>
+    </div>
+
   </div>
   
-
     <section class="footer">
       <div class="footer-heading">
         <h4>EVERYONE BUYS THEM BUT WE ARE THE BEST AT CLEANING THEM ....</h4>
@@ -24,7 +29,7 @@
             <ul>
               <li><a href="#">HOW WE WORK</a></li>
               <li><a href="#">ViSION</a></li>
-              <li><a href="#">REVIEWS</a></li>
+              <li><a href="/rate-us">REVIEWS</a></li>
               <li><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
                   <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
                   <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -106,21 +111,35 @@ export default {
   height: 10px;
   margin-bottom: 99px;
 }
+
 .about {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 1350px;
+  margin: 20 auto;
   padding: 30px;
   text-align: justify;
 }
+
 .about h2 {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
 }
+
 .about p {
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 20px;
+  float: right;
+}
+
+.img {
+  float: left;
+  width: 30%;
+}
+
+.text{
+  float: right;
+  width: 50%;
 }
 
 .footer {

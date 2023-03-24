@@ -155,7 +155,7 @@ button {
 .navbar .logo {
     margin-right: 30px;
 }
-  
+
 .navbar .nav-links {
     display: flex;
     justify-content: flex-end;
@@ -164,13 +164,16 @@ button {
     padding: 0;
     list-style: none;
 }
-  
+
+.navbar .nav-link router-link:hover {
+    transition: 1s;
+    scale : 1.2;
+}
+
 .navbar .nav-links li {
     margin-left: 20px;
 }
-.nav-item a:hover {
-    color: hsl(39, 100%, 51%);
-}
+
   
 .navbar .nav-links li:first-child {
     margin-left: 0;
@@ -207,12 +210,32 @@ button {
     color: hsl(124, 52%, 12%);
     border: 1px solid   hsl(39, 100%, 51%);
 }
+
+@media screen and (max-width: 399px) {
+    .navbar {
+      flex-direction: column;
+    }
   
+    .navbar .nav-links {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+  
+    .navbar .nav-links li {
+      margin: 10px 0;
+    }
+  
+    .navbar .more-button {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+
 @media screen and (max-width: 268px) {
 .navbar .nav-links {
       display:table-column-group;
     }
-
     .navbar.responsive .nav-links {
       display: flex;
       flex-direction: column;
@@ -233,7 +256,6 @@ button {
       top: 10px;
       right: 10px;
     }
-
   }
-  
+
 </style>

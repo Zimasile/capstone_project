@@ -1,42 +1,40 @@
 <template>
     <div class="plan-border"></div>
-    <div class="container">
-      <form action="">
-        <div class="card">
-            <a class="login">Register</a>
-            <div class="inputBox">
-                <input type="name" v-model="Name" placeholder="John" required="required">
-                <span>Name</span>
+    <div class="card">
+            <section class="grid-group">
+          
+            <div class="circle flex-group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                  </svg>
             </div>
-            <div class="inputBox">
-                <input type="surname" v-model="Surname" placeholder="Doe" required="required">
-                <span>Surname</span>
+          
+            <div class="hidden you-selected-text"> 
+              <p class="hidden you-selected-text"></p>
             </div>
-            <div class="inputBox">
-                <input type="text" v-model="cellnumber" placeholder="0812345678" required="required">
-                <span>Cellphone Number</span>
-            </div>
-            <div class="inputBox">
-                <input type="username" v-model="username" placeholder="John356" required="required">
-                <span>username</span>
-            </div>
-            <div class="inputBox">
-              <input type="gender" v-model="gender" placeholder="gender" required="required">
-              <span>gender</span>
-            </div>
-            <div class="inputBox">
-                <input type="email" v-model="email" placeholder="user314@gmail.com" required="required">
-                <span>E-mail</span>
-            </div>
-            <div class="inputBox">
-              <input type="password" v-model="password" placeholder="*********" required="required">
-              <span class="user">Password</span>
-            </div>
-            <button class="enter">Register</button>
-        </div>
-        </form>
+          
+          <section> 
+            <h1>How did we do?</h1>
+            <p class="explanatory-text">
+              Please let us know how we did with your support request. All feedback is appreciated
+              to help us improve our services and give our best interns of customer care!
+            </p>
+          </section>
+          
+            <section class="rating-section">
+              <div class="flex-group  rate-buttons">
+                <button class="circle" value="1">1</button>
+                <button class="circle" value="2">2</button>
+                <button class="circle" value="3">3</button> 
+                <button class="circle" value="4">4</button> 
+                <button class="circle" value="5">5</button>
+              </div>
+            </section>
+            <input type="submit" name="rex" class="button" value="Submit">
+          </section>
     </div>
 
+    
   <section class="footer">
     <div class="footer-heading">
       <h4>EVERYONE BUYS THEM BUT WE ARE THE BEST AT CLEANING THEM ....</h4>
@@ -115,33 +113,93 @@
         <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
       </svg></a></button>
   </section>
+
 </template>
 <script>
 export default {
-  name: 'RegistrationPage',
-  props: {
-    msg: String
-  }
-}
+  data() {
+    return {
+      rating: null,
+    };
+  },
+  mounted() {
+    const ratingSection = document.querySelector(".rating-section");
+    const rateButtons = ratingSection.querySelector(".rate-buttons");
+    const selectedButton = rateButtons.querySelector(".selected");
+    const submitButton = document.querySelector("input.button");
+    const header = document.querySelector("h1");
+    const ratingSelected = document.querySelector("div.you-selected-text");
+    const ratingSelectedText = document.querySelector("p.you-selected-text");
+    const image = document.querySelector("img");
+    const imageCircle = document.querySelector("div.circle");
+    const gridContainer = document.querySelector(".grid-group");
+    const explanation = document.querySelector(".explanatory-text");
+    rateButtons.addEventListener("click", (e) => {
+      const button = e.target;
+
+      Array.from(button.parentNode.children).forEach((k) => {
+        k.classList.remove("selected");
+      });
+
+      if (e.target.matches("button")) {
+        button.classList.add("selected");
+        this.rating = e.target.value;
+      }
+    });
+
+    submitButton.addEventListener("click", () => {
+      if (this.rating != null) {
+        ratingSelectedText.textContent = "You selected " + this.rating + " out of 5";
+        ratingSelected.classList.remove("hidden");
+        ratingSelectedText.classList.remove("hidden");
+        ratingSelected.classList.add("rating-selected");
+        image.setAttribute("src", "images/illustration-thank-you.svg");
+        image.classList.remove("star");
+        imageCircle.classList.remove("circle");
+        submitButton.classList.add("hidden");
+        ratingSection.classList.add("hidden");
+        header.textContent = "Thank you!";
+        gridContainer.classList.add("center");
+        explanation.textContent =
+          "We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch! All our social media links are down below, once again, Thank You!";
+      }
+    });
+  },
+};
 </script>
 
 <style>
-.login {
-    color:hsl(124, 52%, 12%);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: block;
-    font-weight: bold;
-    font-size: x-large;
-}
+
 .plan-border {
     border-top: 1px solid hsl(124, 52%, 12%);
     width: 1509px;
     height: 10px;
     margin-bottom: 99px;
 }
-  
-.card {
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+h1 {
+    color: hsl(124, 52%, 12%);
+    font-size: 1.75rem;
+}
+  .card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -156,183 +214,119 @@ export default {
     border: 1px solid hsl(124, 52%, 12%);
     margin: auto;
 }
-  
-.inputBox {
-    position: relative;
-    width: 250px;
-}
-  
-.inputBox input {
-    width: 100%;
-    padding: 10px;
-    outline: none;
-    border: none;
-    color: hsl(0, 0%, 0%);
-    font-size: 1em;
-    background: transparent;
-    border-left: 2px solid hsl(124, 52%, 12%);
-    border-bottom: 2px solid hsl(124, 52%, 12%);
-    transition: 0.1s;
-    border-bottom-left-radius: 8px;
-}
-  
-.inputBox span {
-    margin-top: 5px;
-    position: absolute;
-    left: 0;
-    transform: translateY(-4px);
-    margin-left: 10px;
-    padding: 10px;
-    pointer-events: none;
-    font-size: 12px;
-    color: hsl(124, 52%, 12%);
-    text-transform: uppercase;
-    transition: 0.5s;
-    letter-spacing: 3px;
-    border-radius: 8px;
-}
-  
-.inputBox input:valid~span,
-.inputBox input:focus~span {
-    transform: translateX(113px) translateY(-15px);
-    font-size: 0.8em;
-    padding: 5px 10px;
-    background: hsl(124, 52%, 12%);
-    letter-spacing: 0.2em;
-    color: #fff;
-    border: 2px;
+
+.grid-group {
+    display: grid; 
+    gap: 1.5rem;
+    padding: 2rem 1.5rem; 
+    width: 375px;
+    height: 404.7px;
+    border-radius: 2rem;
 }
 
-.inputBox input:valid,
-.inputBox input:focus {
-    border: 2px solid hsl(124, 52%, 12%);
-    border-radius: 8px;
+.flex-group {
+    display: inline-flex; 
+    gap: 1.2rem;
+    justify-content: center;  
+    align-items: center;
 }
 
-.enter {
-    height: 45px;
-    width: 100px;
-    border-radius: 5px;
-    border: 1px solid hsl(124, 52%, 12%);
-    cursor: pointer;
-    background-color: transparent;
-    transition: 0.5s;
-    text-transform: uppercase;
-    font-size: 10px;
-    color: hsl(124, 52%, 12%);
-    letter-spacing: 2px;
-    margin-bottom: 1em;
+.hidden {
+    display: none;
 }
 
-.dot-spinner {
-  --uib-size: 2.8rem;
-  --uib-speed: .9s;
-  --uib-color: #183153;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: var(--uib-size);
-  width: var(--uib-size);
+.center {
+    text-align: center;
 }
 
-.dot-spinner__dot {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100%;
-  width: 100%;
+img .star {
+    width: 17px;
+    height: 16px;
 }
 
-.dot-spinner__dot::before {
-  content: '';
-  height: 20%;
-  width: 20%;
-  border-radius: 50%;
-  background-color: var(--uib-color);
-  transform: scale(0);
-  opacity: 0.5;
-  animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
-  box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
-}
-
-.dot-spinner__dot:nth-child(2) {
-  transform: rotate(45deg);
-}
-
-.dot-spinner__dot:nth-child(2)::before {
-  animation-delay: calc(var(--uib-speed) * -0.875);
-}
-
-.dot-spinner__dot:nth-child(3) {
-  transform: rotate(90deg);
-}
-
-.dot-spinner__dot:nth-child(3)::before {
-  animation-delay: calc(var(--uib-speed) * -0.75);
-}
-
-.dot-spinner__dot:nth-child(4) {
-  transform: rotate(135deg);
-}
-
-.dot-spinner__dot:nth-child(4)::before {
-  animation-delay: calc(var(--uib-speed) * -0.625);
-}
-
-.dot-spinner__dot:nth-child(5) {
-  transform: rotate(180deg);
-}
-
-.dot-spinner__dot:nth-child(5)::before {
-  animation-delay: calc(var(--uib-speed) * -0.5);
-}
-
-.dot-spinner__dot:nth-child(6) {
-  transform: rotate(225deg);
-}
-
-.dot-spinner__dot:nth-child(6)::before {
-  animation-delay: calc(var(--uib-speed) * -0.375);
-}
-
-.dot-spinner__dot:nth-child(7) {
-  transform: rotate(270deg);
-}
-
-.dot-spinner__dot:nth-child(7)::before {
-  animation-delay: calc(var(--uib-speed) * -0.25);
-}
-
-.dot-spinner__dot:nth-child(8) {
-  transform: rotate(315deg);
-}
-
-.dot-spinner__dot:nth-child(8)::before {
-  animation-delay: calc(var(--uib-speed) * -0.125);
-}
-
-@keyframes pulse0112 {
-  0%,
-  100% {
-    transform: scale(0);
-    opacity: 0.5;
-  }
-
-  50% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.enter:hover {
+.rating-selected {
+    display: flex;
+    place-content: center;
+    padding: .25rem;
+    margin: auto;
     background-color: #c8c8c8;
-    color:hsl(124, 52%, 12%);
+    border-radius: 1rem;
+    width: 55%;
 }
 
+p.you-selected-text {
+    transform: translate(0, 0.1rem)
+}
+
+.circle {
+    background-color: var(--clr-neutral-blue-400);
+    color: var(--clr-neutral-grey-100);
+    font-family: var(--ff-base);
+    width: 50px;
+    height: 50px;
+
+    border: none; 
+    border-radius: 5rem;
+}
+
+.transform {
+    transform: translate(0, .1rem);
+}
+
+.button-number {
+    transform: translate(-.0125rem, .125rem);
+}
+
+button, input {
+    cursor: pointer;
+}
+
+.button {
+    background-color: #e3e3e3; 
+    color:hsl(124, 52%, 12%);
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    padding: .5rem;
+    border-radius: 8px;
+    border: 1px solid hsl(124, 52%, 12%);
+}
+
+button.circle:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(124, 52%, 12%);
+    border-radius: 8px;
+    border: 1px solid hsl(124, 52%, 12%);
+}
+
+.button:hover {
+    background-color:  #e3e3e3;
+    color: hsl(124, 52%, 12%);
+    border-radius: 8px;
+    border: 1px solid hsl(0, 0%, 100%);
+}
+
+.selected {
+    background-color:hsl(0, 0%, 100%);
+    color:hsl(124, 52%, 12%);
+    border-radius: 1rem;
+    border: 1px solid hsl(124, 52%, 12%);
+}
+
+.explanatory-text {
+    margin-top: 0.6rem;
+}
+
+.attribution {
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--clr-neutral-white);
+}
+
+.attribution a {
+    text-decoration: none;
+    color: var(--clr-neutral-grey-400);
+}
 .footer {
     background-color: #ffffff;
     background-repeat: no-repeat;
@@ -396,6 +390,7 @@ export default {
 .footer-links a:hover {
     text-decoration: underline;
 }
+
 button{
     border: 1px solid hsl(124, 52%, 12%);
 }

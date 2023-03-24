@@ -63,7 +63,7 @@
         </div>
         <div class="list">
           <ul>
-            <li><a href="#">SALES</a></li>
+            <li><a href="/contact">LEAVE A MESSAGE</a></li>
             <li><a href="#">SUPPORT</a></li>
             <li><a href="#">LIVE CHAT</a></li>
           </ul>

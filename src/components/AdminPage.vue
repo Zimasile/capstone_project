@@ -1,10 +1,6 @@
 <template>
     <div class="plan-border"></div>
-    <!-- <div>
-      <h4>Admin Page</h4>
-    </div> -->
-
-  
+    
     <section class="footer">
       <div class="footer-heading">
         <h4>EVERYONE BUYS THEM BUT WE ARE THE BEST AT CLEANING THEM ....</h4>
@@ -47,7 +43,7 @@
           </div>
           <div class="list">
             <ul>
-              <li><a href="#">SALES</a></li>
+              <li><a href="#">CONTACT US</a></li>
               <li><a href="#">SUPPORT</a></li>
               <li><a href="#">LIVE CHAT</a></li>
             </ul>
