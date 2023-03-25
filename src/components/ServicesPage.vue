@@ -3,10 +3,7 @@
 
   <header class="header">
     <h3 class="header__head fw-light">We Offer the following Services</h3>
-    <p class="header-lead fw-normal">
-      Our Artificial Intelligence powered tools use millions of project data
-      points to ensure that your project is successful
-    </p>
+    <p class="header-lead fw-normal">Welcome to The Shoe Clinic, your go-to sneaker cleaning company. We offer a range of services to keep your shoes looking their best. Our customisation service allows you to add a personal touch to your sneakers, while our suede refurbishing service will bring new life to your old suede shoes. Our whitening service will remove any stubborn stains and leave your shoes looking fresh and new. And for a truly deep clean, we offer our signature cleaning service that will leave your shoes looking and smelling brand new. Trust us to take care of your shoes and leave them looking their best</p>
   </header>
   <!-- main section -->
   <main class="main">
@@ -23,13 +20,10 @@
 
         <div class="cta cta__red">
           <h3 class="cta__title">Deep Clean</h3>
-          <p class="cta__lead">
-            Scans our talent network to create the optimal team for your
-            project
-          </p>
-          <img
-            src="" alt="" class="cta__img"
-          />
+          <p class="cta__lead">We Will ensure your shoes are as clean as the day you bought them</p>
+          <img src="https://i.postimg.cc/L8xJbJv7/deep-2.png" alt="" class="cta__img"/>
+          <img src="https://i.postimg.cc/MHwZTwdV/deep.png" alt="" class="cta__img"/>
+
         </div>
         <!-- Karma -->
         <div class="cta cta__orange">
@@ -37,23 +31,15 @@
           <p class="cta__lead">
             Regularly evaluates our talent to ensure quality
           </p>
-          <img
-            src="https://i.postimg.cc/C5dqVdmp/FB-IMG-16744789054423222-Photo-Room-png-Photo-Room.png" alt="A Karma icon" class="cta__img"  width="350px"/>
+          <img src="https://i.postimg.cc/13Bm3bqN/whitening.png" alt="A Karma icon" class="cta__img"  width="350px"/>
             <button>Request</button>
-
         </div>
 
         <div class="cta cta__dark">
           <h3 class="cta__title">Suede Refurbishing</h3>
-          <p class="cta__lead">
-            Uses data from past projects to provide better delivery estimates
-          </p>
+          <p class="cta__lead">We do all kinds of suede shoes</p>
 
-          <img
-            src=""
-            alt="A Calculator icon"
-            class="cta__img"
-          />
+          <img src="" alt="A Calculator icon" class="cta__img"/>
         </div>
       </div>
     </section>
@@ -170,22 +156,22 @@ a {
 }
 
 p {
-  color: var(--Dark-Blue-color);
+  color: hsl(124, 52%, 12%);
   opacity: 0.5;
 }
 h1 {
-  color: var(--Dark-Blue-color);
+  color: hsl(124, 52%, 12%);
 }
 
 .fw-light {
-  font-weight: var(--font-weight-light);
+  font-weight: light;
 }
 
 .fw-normal {
-  font-weight: var(--font-weight-normal);
+  font-weight: normal;
 }
 .fw-bold {
-  font-weight: var(--font-weight-bold);
+  font-weight: bold;
 }
 
 .header {
@@ -205,23 +191,24 @@ h1 {
 }
 
 .cta__cyan {
-  border-top: 5px solid var(--Cyanblue-color);
+  border-top: 5px solid hsl(124, 52%, 12%);
 }
 .cta__red {
-  border-top: 5px solid var(--red-color);
+  border-top: 5px solid hsl(124, 52%, 12%);
 }
 .cta__orange {
-  border-top: 5px solid var(--orange-color);
+  border-top: 5px solid hsl(124, 52%, 12%);
 }
 .cta__dark {
-  border-top: 5px solid var(--darkblue-color);
+  border-top: 5px solid hsl(124, 52%, 12%);
 }
 .container {
   margin: 0 3rem;
 }
 .cta__img {
-  display: block;
+  display: inline;
   margin: auto;
+  height: 130px;
 }
 .cta {
   display: flex;
@@ -235,7 +222,7 @@ h1 {
   border-radius: 8px;
 }
 .cta__title {
-  font-weight: var(--font-weight-bold);
+  font-weight: bold;
   font-size: 2rem;
   color: #4d4f62;
 }

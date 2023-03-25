@@ -110,11 +110,8 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 .intro {
-/*  background-image: linear-gradient( rgba(0,0,0,0.5), rgba(0,0,0,0.9)),
-   url('https://i.postimg.cc/Z53f5DqC/FB-IMG-16674003915460163.jpg');*/
   background-color: hsl(0, 0%, 98%);
   background-repeat: no-repeat;
   background-position: center center;
@@ -170,7 +167,6 @@ export default {
 .intro img {
   width: 410px;
   height: 430px;
-  margin: 100px 60px 0 0;
 }
 
 .intro button:hover{
@@ -261,6 +257,170 @@ button{
   border: 1px solid hsl(124, 52%, 12%);
 }
 
+/* For screens 721px down to 600px */
+@media screen and (max-width: 721px) {
+  .intro {
+    height: 520px;
+    width: 100%;
+  }
 
+  .intro img {
+    width: 270px;
+    height: 280px;
+    margin: 50px 0 0 0;
+  }
 
+  .intro-text {
+    margin: 50px 0 0 0;
+    text-align: center;
+  }
+
+  .intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .intro p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .video {
+    height: 400px;
+  }
+
+  .plan-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .plan-border {
+    display: none;
+  }
+
+  .plan-borderi {
+    display: none;
+  }
+
+  .plan {
+    width: 80%;
+    margin: 20px 0;
+  }
+
+  .plan h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .plan p {
+    font-size: 0.9rem;
+  }
+
+  .plan button {
+    font-size: 0.9rem;
+  }
+
+  .social-media {
+    width: 100%;
+  }
+
+  .footer {
+    background-position: center center;
+    background-size: 100%;
+  }
+
+  .footer-heading {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 120px 0 20px 0;
+    padding: 20px;
+  }
+
+  .footer-links {
+    justify-content: center;
+    margin: 50px 0 0 0;
+  }
+
+  .footer-links div {
+    width: 50%;
+    margin: 0;
+    text-align: center;
+  }
+
+  .footer-links ul {
+    margin-top: 30px;
+  }
+
+  .footer-links p {
+    margin-bottom: 20px;
+  }
+
+  .footer img {
+    margin: 0 10px;
+  }
+}
+
+/* For screens 599px down to 400px */
+@media screen and (max-width: 599px) {
+  .intro {
+    height: 420px;
+  }
+
+  .intro img {
+    width: 220px;
+    height: 230px;
+    margin: 30px 0 0 0;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .intro p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .video {
+    height: 300px;
+  }
+
+  .plan {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .plan h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  .plan p {
+    font-size: 0.8rem;
+  }
+
+  .plan button {
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    background-size: 150%;
+    margin-top: 50px;
+  }
+
+  .footer-heading {
+    margin: 80px 0 10px 0;
+    padding: 10px;
+  }
+
+  .footer-links {
+    margin: 30px 0 0 0;
+  }
+
+  .footer-links{
+
+  }
+}
 </style>

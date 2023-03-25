@@ -17,21 +17,30 @@
                 <span>Cellphone Number</span>
             </div>
             <div class="inputBox">
-                <input type="username" v-model="username" placeholder="John356" required="required">
-                <span>username</span>
+                <input type="text" v-model="cellnumber" placeholder="0812345678" required="required">
+                <span>Cellphone Number</span>
+            </div>
+            <div class="inputBox">
+              <input type="email" v-model="email" placeholder="user314@gmail.com" required="required">
+              <span>E-mail</span>
+          </div>
+          <div class="inputBox">
+            <input type="password" v-model="password" placeholder="*********" required="required">
+            <span class="user">Password</span>
+          </div>
+            <div class="inputBox">
+              <input type="text" v-model="imgUrl" placeholder="https://i.postimg.cc/PfSF7BS3/user-default.png" required>
+              <span>imageURL</span>
             </div>
             <div class="inputBox">
               <input type="gender" v-model="gender" placeholder="gender" required="required">
               <span>gender</span>
             </div>
             <div class="inputBox">
-                <input type="email" v-model="email" placeholder="user314@gmail.com" required="required">
-                <span>E-mail</span>
+              <input type="address" v-model="shipping_address" placeholder="gender" required="required">
+              <span>Address for pickup</span>
             </div>
-            <div class="inputBox">
-              <input type="password" v-model="password" placeholder="*********" required="required">
-              <span class="user">Password</span>
-            </div>
+
             <button class="enter">Register</button>
         </div>
         </form>

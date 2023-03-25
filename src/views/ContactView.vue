@@ -120,7 +120,7 @@ export default {
 }
 .plan-border {
     border-top: 1px solid hsl(124, 52%, 12%);
-    width: 1509px;
+    width: 1499px;
     height: 10px;
     margin-bottom: 99px;
   }

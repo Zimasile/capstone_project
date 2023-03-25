@@ -1,13 +1,12 @@
 import { createStore } from 'vuex'
 import axios from 'axios';
-const backendURL = "https://the-shoe-clinic.onrender.com/";
+const renderURL = "https://the-shoe-clinic.onrender.com/";
 export default createStore({
   state: {
     users: null,
     user: null,
     products: null,
     product: null,
-    loadSpinner: true
   },
   mutations: {
     setUsers(state, values){
@@ -21,20 +20,11 @@ export default createStore({
     },
     setProduct(state, value){
       state.product = value
-    },
-    setSpinner(state, value) {
-      state.loadSpinner = value
-    },
+    }
   },
   actions: {
     getUsers: async(context) => {
-      // fetch(`${backendURL}users`)
-      //   .then((res) => res.json())
-      //   .then((users) =>{
-      //     console.log(users);
-      //     context.commit("setUsers", users);
-      //   });
-      const res = await axios.get(`${backendURL}users`);
+      const res = await axios.get(`${renderURL}users`);
       const {results} = await res.data;
       if(results) {
         console.log(results)
@@ -42,7 +32,7 @@ export default createStore({
       }
     },
     getProducts: async(context) => {
-      const res = await axios.get(`${backendURL}products`);
+      const res = await axios.get(`${renderURL}products`);
       const {results} = await res.data;
       if(results) {
         console.log(results)
@@ -50,7 +40,7 @@ export default createStore({
       }
     },
     getUser: async(context) => {
-      const res = await axios.get(`${backendURL}user`);
+      const res = await axios.get(`${renderURL}user`);
       const {results} = await res.data;
       if(results) {
         console.log(results)
@@ -58,7 +48,7 @@ export default createStore({
       }
     },
     getProduct: async(context) => {
-      const res = await axios.get(`${backendURL}product`);
+      const res = await axios.get(`${renderURL}product`);
       const {results} = await res.data;
       if(results) {
         console.log(results)
@@ -66,18 +56,19 @@ export default createStore({
       }
     },
     register: async(context, payload) => {
-      const {firstName, lastName, gender, cellphoneNumber, emailAdd, userPass, userRole, userProfile, joinDate} = payload
+      const {name, surname, cellnumber, email, password, imgURL,gender, shipping_address, regDate} = payload
       const res = await fetch('https://the-shoe-clinic.onrender.com/users',{
         method: "POST",
         body: JSON.stringify({
-          firstName,
-          lastName,
+          name,
+          surname,
+          cellnumber,
+          email,
+          password,
+          imgURL,
           gender,
-          cellphoneNumber,
-          emailAdd,
-          userPass,
-          userProfile,
-          joinDate
+          shipping_address,
+          regDate
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -87,7 +78,7 @@ export default createStore({
         .then((json) => context.commit("setUser", json));
       },
       async login(context, payload) {
-        const res = await axios.post(`${backendURL}login`, payload);
+        const res = await axios.post(`${renderURL}login`, payload);
         const {result, err} = await res.data;
         if(result) {
           context.commit('setUser', result);
@@ -96,7 +87,7 @@ export default createStore({
         }
       },
       async register(context, payload) {
-        let res = await axios.post(`${backendURL}register`, payload);
+        let res = await axios.post(`${renderURL}register`, payload);
         let {msg, err} = await res.data;
         if(msg) {
           context.commit('setMessage', msg);
@@ -105,7 +96,7 @@ export default createStore({
         }
       },
       async editUser (context, payload) {
-        const res = await axios.put(`${backendURL}editUser`, payload)
+        const res = await axios.put(`${renderURL}editUser`, payload)
         const { msg, err } = await res.data
         if (msg) {
           context.commit('setUser', msg)
@@ -114,7 +105,7 @@ export default createStore({
         }
       },
       async editProduct (context, payload) {
-        const res = await axios.put(`${backendURL}editProduct`, payload)
+        const res = await axios.put(`${renderURL}editProduct`, payload)
         const { msg, err } = await res.data
         if (msg) {
           context.commit('setProduct', msg)
@@ -123,7 +114,7 @@ export default createStore({
         }
       },
       async deleteProduct (context, payload) {
-      const res = await axios.delete(`${backendURL}deleteProduct`, payload)
+      const res = await axios.delete(`${renderURL}deleteProduct`, payload)
       const { msg, err } = await res.data
       if (msg) {
         context.commit('setProduct', msg)
