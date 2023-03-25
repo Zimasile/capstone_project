@@ -102,7 +102,7 @@
         </div>
         <div class="list">
           <ul>
-            <li><a href="#">SALES</a></li>
+            <li><a href="/contact">LEAVE A MESSAGE</a></li>
             <li><a href="#">SUPPORT</a></li>
             <li><a href="#">LIVE CHAT</a></li>
           </ul>
@@ -150,18 +150,7 @@ export default {
 </script>
 
 <style>
-:root {
-  --orange-color: #f9fc4e;
-  --red-color: #b6ea54;
-  --darkblue-color: #549ef2;
-  --Cyanblue-color: #44d3d2;
-  --Dark-Blue-color: hsl(234, 12%, 34%);
-  --Grayish-Blue-color: hsl(229, 6%, 66%);
-  --Light-Gray-color: hsl(0, 0%, 98%);
-  --font-weight-light: 200;
-  --font-weight-normal: 400;
-  --font-weight-bold: 600;
-}
+
 
 .plan-border {
   border-top: 1px solid hsl(124, 52%, 12%);
